@@ -3,13 +3,13 @@ import cors from 'cors'
 import BodyParser from 'body-parser';
 import { initmongo } from './database/mongodb';
 import { router } from './routes/authRoutes';
+const app = express();
 
 const init = () => {
     try {
       initmongo();
   
       const PORT = process.env.PORT || 3000;
-      const app = express();
       app.use(BodyParser.json());
     //   app.use(BodyParser.json({ limit: '50mb' }))
       app.use(
