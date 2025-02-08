@@ -30,7 +30,9 @@ const init = () => {
       });
   
       //api
-      
+      app.get("/",(req,res)=>{
+        res.status(200).send("Hello from the server")
+    })
       app.use("/bookcalls/api", cors(), router);
       app.get("/bookcalls", (req, res) => {
         res.send(
